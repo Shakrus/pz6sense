@@ -1,0 +1,10 @@
+module Base
+{
+	model KeyBlank
+	{
+	mesh = Worlditems/KeyBlankModel,
+	texture = Worlditems/KeyBlankText,
+	scale = 0.0045,
+	attachment world
+	}
+}
