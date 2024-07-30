@@ -1,0 +1,181 @@
+i=253; 
+v=getVehicleById(i);
+print('ignition='..tostring(v:isKeysInIgnition())..
+'\ndoor='..tostring(v:isKeyIsOnDoor())..
+'\nKey=?'..tostring(v:getKeySpawned())..
+'\nKeyID='..tostring(v:getKeyId()))
+
+i=251;
+v=getVehicleById(i);
+print('PRE = ignition='..tostring(v:isKeysInIgnition())..
+' door='..tostring(v:isKeyIsOnDoor())..
+' Key=?'..tostring(v:getKeySpawned())..
+' KeyID='..tostring(v:getKeyId())..
+' CurrentKey='..tostring(v:currentKey():getCategory())..
+'GoodCar?'..tostring(v:isGoodCar()));
+
+i=253;
+v=getVehicleById(i);
+v:softReset();
+v:addKeyToGloveBox();
+print('POST = ignition='..tostring(v:isKeysInIgnition())..
+' door='..tostring(v:isKeyIsOnDoor())..
+' Key=?'..tostring(v:getKeySpawned())..
+' KeyID='..tostring(v:getKeyId())..
+'GoodCar?'..tostring(v:isGoodCar()))
+
+i=250;
+key=v:getCurrentKey(); --zombie.inventory.InventoryItem;
+print(key)
+print(key:getKeyId())
+print(key:getFullType());
+
+item = key:getWorldItem(); -- import zombie.iso.objects.IsoWorldInventoryObject;
+print(item)
+print(item:getLuaPosX()..':'..item:getLuaPosY())
+--IsoWorld
+--IsoWorld.getWorldSquareX()
+--IsoWorld.getWorldSquareY()
+--IsoWorld:getLuaPosX()
+--IsoWorld:getLuaPosY()
+
+i=250;
+v=getVehicleById(i);
+--v:softReset();
+--v:addKeyToGloveBox();
+print('POST = ignition='..tostring(v:isKeysInIgnition())..
+' door='..tostring(v:isKeyIsOnDoor())..
+' Key=?'..tostring(v:getKeySpawned())..
+' KeyID='..tostring(v:getKeyId())..
+'GoodCar?'..tostring(v:isGoodCar()))
+
+import zombie.scripting.objects.Item;
+
+
+
+zombie.vehicles.VehicleManager
+    public BaseVehicle getVehicleByID(short var1) {
+
+zombie.vehicles.BaseVehicle
+import zombie.inventory.types.Key;
+import zombie.inventory.InventoryItem;
+import zombie.inventory.InventoryItemFactory;
+import zombie.iso.objects.IsoWorldInventoryObject;
+
+    public void softReset() {
+    public void addKeyToGloveBox() {
+    public void addKeyToWorld() {
+    public int getKeyId() {
+    public boolean getKeySpawned() {
+    public boolean isKeyIsOnDoor() {
+    public boolean isKeysInIgnition() {
+
+    public InventoryItem getCurrentKey() {
+
+    public void putKeyInIgnition(InventoryItem var1) {
+    public boolean isGoodCar() {
+
+
+i=250;
+v=getVehicleById(i);
+print('KeyID='..tostring(v:getKeyId()))
+print('CurrentKey?='..tostring(v:getCurrentKey()))
+
+..
+'GoodCar?'..tostring(v:index()))
+
+
+public class InventoryItem {
+    protected ItemContainer container;
+    protected int containerX;
+    protected int containerY;
+
+    public String getName() {
+    public int getContainerX() {
+    public int getContainerY() {
+
+	Item var20 = ScriptManager.instance.FindItem(this.getGunType());
+	if (var20 == null) {
+		ScriptManager var10000 = ScriptManager.instance;
+		var10001 = this.getModule();
+		var20 = var10000.FindItem(var10001 + "." + this.ammoType);
+
+	public IsoWorldInventoryObject getWorldItem() {
+	
+public class IsoWorldInventoryObject extends IsoObject {
+public InventoryItem getItem() {
+        return this.item;
+    }
+    public float getWorldPosX() {
+        return this.getX() + this.xoff;
+    }
+
+    public float getWorldPosY() {
+        return this.getY() + this.yoff;
+    }
+
+    public float getWorldPosZ() {
+        return this.getZ() + this.zoff;
+    }
+	
+import zombie.iso.IsoObject;
+import zombie.iso.IsoUtils;
+import zombie.iso.IsoWorld;
+	
+
+import zombie.inventory.InventoryItem;
+        this.keyId = -1;
+        this.id = 0;
+        this.registry_id = -1;
+
+        this.id = var1.getInt();
+    public int getID() {
+    public void setID(int var1) {
+
+
+i=250;
+v=getVehicleById(i);
+print('KeyID='..tostring(v:getKeyId()))
+ii = v:getCurrentKey()
+print('CurrentKey?='..tostring(ii))
+print('itemID?='..tostring(ii:getID()))
+print('x?='..tostring(ii:containerY()))
+print('x?='..tostring(ii:containerX()))
+wi = ii:getWorldItem()
+print('x='..wi)
+id key = 1865473190
+
+i=251;
+v=getVehicleById(i);
+print('PRE = ignition='..tostring(v:isKeysInIgnition())..
+' door='..tostring(v:isKeyIsOnDoor())..
+' Key=?'..tostring(v:getKeySpawned())..
+' KeyID='..tostring(v:getKeyId())..
+--' CurrentKey='..tostring(v:currentKey():getCategory())..
+'GoodCar?'..tostring(v:isGoodCar()));
+
+IsoGridSquare var5 =
+	for(int var6 = 1; var6 < var5.getObjects().size(); ++var6) {
+		IsoObject var4 = (IsoObject)var5.getObjects().get(var6);
+		if (var4 instanceof IsoTree) {
+			var4.setRenderEffect(RenderEffectType.Vegetation_Rustle);
+
+public class IsoMovingObject extends IsoObject implements Mover {
+import zombie.characters.IsoZombie;
+zombie.characters.IsoZombie
+addItemToSpawnAtDeath
+
+
+
+KahluaTableIterator var3 = var1.iterator();
+
+        while(var3.advance()) {
+            KahluaTableImpl var4 = (KahluaTableImpl)Type.tryCastTo(var3.getValue(), KahluaTableImpl.class);
+            if (var4 != null) {
+                ZZDOutfit var5 = initOutfit(var4);
+                if (var5 != null) {
+                    var5.customName = "ZZD." + var2.name + "." + var5.name;
+                    var2.outfits.add(var5);
+                }
+            }
+        }

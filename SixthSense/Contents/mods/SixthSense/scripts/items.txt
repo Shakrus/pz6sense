@@ -1,0 +1,22 @@
+module SixthSense{
+	imports 
+	{
+		Base
+	}
+	item KeyLocator{
+		DisplayCategory = Key,
+		Type = Key,
+		DisplayName = KeyLoc,
+		Icon = default,
+		Weight = 0.1,
+	}
+
+	recipe Create Locator
+	{
+		Base.Nails=1,
+		Result:KeyLocator=1,
+		Category: Key
+		Time:0.0,
+	
+	}
+}
