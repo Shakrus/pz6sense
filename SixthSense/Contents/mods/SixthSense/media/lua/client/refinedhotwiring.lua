@@ -1,6 +1,6 @@
 function onGetKey(playerObj)
 	ISTimedActionQueue.add(get_key:new(playerObj));
-	
+	--убрал комментарии
 end
 
 local old_ISVehicleMenu_showRadialMenu = ISVehicleMenu.showRadialMenu
