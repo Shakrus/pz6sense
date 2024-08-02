@@ -24,7 +24,20 @@ end
 
 function get_key:perform()
 	local vehicle = self.character:getVehicle()
-	sendClientCommand(self.character, "vehicle", "getKey", {vehicle = vehicle:getId()})
+
+vehicle:softReset();
+--vehicle:addKeyToGloveBox();
+	--IsoGridSquare var1 = vehicle:getCell():getGridSquare((double)vehicle:getX(), (double)vehicle:getY(), (double)vehicle:getZ());
+	local vehX = vehicle:getX()
+	local vehY = vehicle:getY()
+	local vehZ = vehicle:getZ()
+	self.character:setHaloNote("Adding to square :["..tostring(vehX)..","..tostring(vehY)..","..tostring(vehZ).."]")
+	
+	local cell = vehicle:getCell()
+	local gridSquare = cell:getGridSquare(vehX, vehY, vehZ)
+	vehicle:addKeyToSquare(gridSquare);
+	
+	--sendClientCommand(self.character, "vehicle", "getKey", {vehicle = vehicle:getId()})
 	ISBaseTimedAction.perform(self)
 end
 

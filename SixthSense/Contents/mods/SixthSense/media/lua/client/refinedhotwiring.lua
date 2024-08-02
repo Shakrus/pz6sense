@@ -3,6 +3,11 @@ function onGetKey(playerObj)
 	--убрал комментарии
 end
 
+function onGetInfo(playerObj)
+	ISTimedActionQueue.add(get_info:new(playerObj));
+
+end
+
 local old_ISVehicleMenu_showRadialMenu = ISVehicleMenu.showRadialMenu
 
 function ISVehicleMenu.showRadialMenu(playerObj)
@@ -22,14 +27,15 @@ function ISVehicleMenu.showRadialMenu(playerObj)
 	end
 		
 		-- un-hotwire and get key
-		if vehicle:isDriver(playerObj) and
-			not vehicle:isEngineStarted() and
-			not vehicle:isEngineRunning() and
-			not SandboxVars.VehicleEasyUse and
-			not vehicle:isKeysInIgnition() and
-			not playerObj:getInventory():haveThisKeyId(vehicle:getKeyId()) then
-				menu:addSlice(getText("ContextMenu_VehicleLocKey "), getTexture("media/ui/vehicles/KeyBlindToKey.png"), onGetKey, playerObj);
-		end
+		--if vehicle:isDriver(playerObj) and
+			--not vehicle:isEngineStarted() and
+			--not vehicle:isEngineRunning() and
+			--not SandboxVars.VehicleEasyUse and
+			--not vehicle:isKeysInIgnition() and
+			--not playerObj:getInventory():haveThisKeyId(vehicle:getKeyId()) then
+			menu:addSlice(getText("ContextMenu_VehicleLocKey "), getTexture("media/ui/vehicles/KeyBlindToKey.png"), onGetInfo, playerObj);
+			menu:addSlice(getText("ContextMenu_VehicleLocKey "), getTexture("media/ui/vehicles/vehicle_add_key.png"), onGetKey, playerObj);
+		--end
 		menu:addToUIManager()
 	end
 end
