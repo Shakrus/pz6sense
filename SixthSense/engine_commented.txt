@@ -1,0 +1,20 @@
+IsoGridSquare var5 =  --получаем квадрат карты
+for(int var6 = 1; var6 < var5.getObjects().size(); ++var6) { --перебираем обьекты
+	IsoObject var4 = (IsoObject)var5.getObjects().get(var6); --объект типа IsoObject
+	--if (var4 instanceof IsoTree) {						  -- можно проверять на наследника IsoObject
+		--var4.setRenderEffect(RenderEffectType.Vegetation_Rustle);
+
+	if (var4.id != null)  --id не может быть пустым - это id обьекта	
+			--IsoWorldInventoryObject var2 = this.getWorldItem();
+			wio = var4.getWorldItem(); --IsoWorldInventoryObject
+			if (wio != null)
+			{
+				wio.getX();
+				wio.getY();
+				wio.getZ();
+				
+			}
+			
+	end
+end	
+
