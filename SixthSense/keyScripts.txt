@@ -179,3 +179,50 @@ KahluaTableIterator var3 = var1.iterator();
                 }
             }
         }
+
+--if getDebug() then debugPrint = "test" end
+--print("TESTING: ");
+
+
+(this.getType().equals("clothingrack") 
+
+public final class ItemContainer {
+    private static final ArrayList<InventoryItem> tempList = new ArrayList();
+    private static final ArrayList<IsoObject> s_tempObjects = new ArrayList();
+    public ArrayList<InventoryItem> Items = new ArrayList();
+    public ArrayList<InventoryItem> IncludingObsoleteItems = new ArrayList();
+
+    public int getNumberOfItem(String var1, boolean var2, ArrayList<ItemContainer> var3) {
+        int var4 = this.getNumberOfItem(var1, var2);
+        if (var3 != null) {
+            Iterator var5 = var3.iterator();
+
+            while(var5.hasNext()) {
+                ItemContainer var6 = (ItemContainer)var5.next();
+                if (var6 != this) {
+                    var4 += var6.getNumberOfItem(var1, var2);
+                }
+            }
+        }
+
+        return var4;
+    }
+
+    public void putKeyToWorld(IsoGridSquare var1) {
+        InventoryItem var2 = this.createVehicleKey();
+        var1.AddWorldInventoryItem(var2, 0.0F, 0.0F, 0.0F);
+    }
+
+	InventoryItem var5 = InventoryItemFactory.CreateItem(var1);
+
+
+                if (var1.contains("Food") && var6 instanceof Food) {
+
+
+	var4 = ScriptManager.instance.FindItem(var0, var2);
+var4 == null ? null : (InventoryItem)var4.get(0);
+
+
+    public void DoTooltip(ObjectTooltip var1) {
+        this.item.DoTooltip(var1);
+    }
